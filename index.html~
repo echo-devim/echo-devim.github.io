@@ -106,7 +106,7 @@
   </div>
   <div class="article">#2
     <p class="title" onclick="toggle('2')">
-      Share files and folders with a virtual machines (e.g. gnome-boxes)
+      Share files and folders with virtual machines (e.g. gnome-boxes)
     </p>
     <p class="age">
       10/03/2018
