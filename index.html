@@ -93,9 +93,9 @@
   </div>
   <div class="spacer"></div>
   <div class="article">#1
-    <p class="title" onclick="toggle('1')">
+    <a class="title" href="#" onclick="toggle('1')">
       Resize disk in gnome boxes
-    </p>
+    </a>
     <p class="age">
       10/03/2018
     </p>
@@ -105,9 +105,9 @@
     </p>
   </div>
   <div class="article">#2
-    <p class="title" onclick="toggle('2')">
+    <a class="title" href="#" onclick="toggle('2')">
       Share files and folders with virtual machines (e.g. gnome-boxes)
-    </p>
+    </a>
     <p class="age">
       10/03/2018
     </p>
@@ -120,9 +120,16 @@
   <script>
     //if there is an id in the url, show the related article
     var url = window.location.href;
-    var res = url.split("#");
+    var res = url.split("_")[0].split("#");
     if (res.length == 2) { //there is an id
       toggle(res[1]);
+    }
+    //process all the hrefs
+    //this is an experimental trick to have links pointing to the articles containing their titles
+    //in order to be better indexed by google.
+    var anchors = document.getElementsByClassName('title');
+    for(var i = 0; i < anchors.length; i++){
+      anchors[i].href = '#' + (i+1) + '_' + encodeURI(anchors[i].innerText);
     }
   </script>
 </body>
