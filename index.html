@@ -98,10 +98,10 @@
     <p class="age">
       10/03/2018
     </p>
-    <p id="1" class="abody">
+    <div id="1" class="abody">
       Right-click on a VM, open the properties and there you can resize the disk. However, at least Windows, will show a disk size equal to 20GB by default and even if you
       change the disk size nothing seems to happen. You need to use the partition tool of Windows to resize the disk, in fact there will be an empty space unused.
-    </p>
+    </div>
   </div>
   <div class="article">#2
     <a class="title" href="#" onclick="toggle('2')">
@@ -110,11 +110,11 @@
     <p class="age">
       10/03/2018
     </p>
-    <p id="2" class="abody">
+    <div id="2" class="abody">
       Some virtual machines don't provide a way to share folders. In general you need to install some add-ons. An easy solution is to use a mini-ftp server. You can use
       python on the host machine running <span class="cmd">python -m pyftpdlib -w</span> inside the folder you want to share (-w is for the writing permission). Then, you can easily access that folder from the guest
       machine with a ftp client or directly with the file explorer.
-    </p>
+    </div>
   </div>
   <div class="article">#3
     <a class="title" href="#" onclick="toggle('3')">
@@ -123,7 +123,7 @@
     <p class="age">
       24/05/2018
     </p>
-    <p id="3" class="abody">
+    <div id="3" class="abody">
       Following this tutorial you can emulate the Raspberry Pi 2 on Linux, but keep in mind that it will not be really fast.<br>
 First of all, download the official <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian image</a>. If you're not interested in the desktop environment, I suggest to download the stretch 
 lite version. Then unzip the image and convert into the qcow format:
@@ -157,7 +157,7 @@ Enlarge the filesystem. Once again connected, your partition is not increasing !
 need to run <span class="cmd">$ resize2fs /dev/sda2</span>. You can check the result running <span class="cmd">$ df -h</span> before and after <span class="cmd">resize2fs</span>.
 </li>
 </ol>
-    </p>
+    </div>
   </div>
   <script>
     //if there is an id in the url, show the related article
