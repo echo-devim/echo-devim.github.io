@@ -116,6 +116,49 @@
       machine with a ftp client or directly with the file explorer.
     </p>
   </div>
+  <div class="article">#3
+    <a class="title" href="#" onclick="toggle('3')">
+      Emulate ARM Cortex-A15 Raspberry Pi2 through QEMU
+    </a>
+    <p class="age">
+      24/05/2018
+    </p>
+    <p id="3" class="abody">
+      Following this tutorial you can emulate the Raspberry Pi 2 on Linux, but keep in mind that it will not be really fast.<br>
+First of all, download the official <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian image</a>. If you're not interested in the desktop environment, I suggest to download the stretch 
+lite version. Then unzip the image and convert into the qcow format:
+<div class="cmd">
+$ unzip raspbian_stretch_lite.zip raspbian_stretch_lite.img<br>
+$ qemu-img convert -f raw -O qcow2 raspbian_stretch_lite.img raspbian_stretch.qcow
+</div><br>
+Then, download the <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/kernel-qemu-4.4.1-vexpress">kernel-qemu-4.4.1-vexpress</a> and <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/vexpress-v2p-ca15_a7.dtb">vexpress-v2p-ca15_a7.dtb</a> clicking the links or from <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress">this repository</a>.<br>
+Put all the files in the same folder and run the following command to start the emulator with raspbian:<br>
+<div class="cmd">
+$ sudo qemu-system-arm -m 1024M -M vexpress-a15 -cpu cortex-a15 -kernel kernel-qemu-4.4.1-vexpress -no-reboot -dtb vexpress-v2p-ca15_a7.dtb -sd ./raspbian-stretch.qcow -append "root=/dev/mmcblk0p2 rw rootfstype=ext4" -net nic -net user,hostfwd=tcp::2222-:22 -smp 4
+</div>
+The emulator should boot the raspbian image, remember that the user is <i>pi</i> and the password <i>raspberry</i> by default.<br>
+You can enable the ssh service with <span class="cmd">systemctl enable ssh</span> or using the <span class="cmd">raspi-config</span> commands.<br>
+<h3>Expand the image size</h3>
+At this point we need to resize the image, because the raspberry has few memory available by default (i.e. we can't install too many applications, etc.).<br>
+<ol>
+<li>
+Expand the virtual size of the image using:
+<div class="cmd">$ qemu-img resize raspbian_stretch.qcow +10G</div>
+</li>
+<li>
+Boot raspbian and inside the emulator use fdisk to manage the partitions:
+<div class="cmd">$ fdisk /dev/sda</div>
+Display the partitions using the <span class="cmd">p</span> command. Note the beginning of the second partition block of the output (call this value INITP).
+Delete the second partition with the <span class="cmd">d</span> command then 2. If you again display the partitions it has disappeared.
+Create a new partition with <span class="cmd">n</span> then <span class="cmd">p</span> then 2. There fdisk provides a value for the starting block. This must match the value that you have identified earlier (INITP). The following value is the end block that is the largest possible to fill all the space If you display the information again you will see that your new partition has a end higher so that means that the partition is larger. Back up the information with <span class="cmd">w</span> command. Restart the machine.
+</li>
+<li>
+Enlarge the filesystem. Once again connected, your partition is not increasing ! The partition has been resized well but not the filesystem ! And this is our last step. It is very simple, you just
+need to run <span class="cmd">$ resize2fs /dev/sda2</span>. You can check the result running <span class="cmd">$ df -h</span> before and after <span class="cmd">resize2fs</span>.
+</li>
+</ol>
+    </p>
+  </div>
   <script>
     //if there is an id in the url, show the related article
     var url = window.location.href;
