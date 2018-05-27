@@ -131,10 +131,10 @@ lite version. Then unzip the image and convert into the qcow format:
 $ unzip raspbian_stretch_lite.zip raspbian_stretch_lite.img<br>
 $ qemu-img convert -f raw -O qcow2 raspbian_stretch_lite.img raspbian_stretch.qcow
 </div><br>
-Then, download the <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/kernel-qemu-4.4.1-vexpress">kernel-qemu-4.4.1-vexpress</a> and <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/vexpress-v2p-ca15_a7.dtb">vexpress-v2p-ca15_a7.dtb</a> clicking the links or from <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress">this repository</a>.<br>
+Then, download the <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/kernel-qemu-4.4.1-vexpress">kernel-qemu-4.4.1-vexpress</a> and <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/vexpress-v2p-ca15-tc1.dtb">vexpress-v2p-ca15-tc1.dtb</a> clicking the links or from <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress">this repository</a>.<br>
 Put all the files in the same folder and run the following command to start the emulator with raspbian:<br>
 <div class="cmd">
-$ sudo qemu-system-arm -m 1024M -M vexpress-a15 -cpu cortex-a15 -kernel kernel-qemu-4.4.1-vexpress -no-reboot -dtb vexpress-v2p-ca15_a7.dtb -sd ./raspbian-stretch.qcow -append "root=/dev/mmcblk0p2 rw rootfstype=ext4" -net nic -net user,hostfwd=tcp::2222-:22 -smp 4
+$ sudo qemu-system-arm -m 1024M -M vexpress-a15 -cpu cortex-a15 -kernel kernel-qemu-4.4.1-vexpress -no-reboot -dtb vexpress-v2p-ca15-tc1.dtb -sd ./raspbian-stretch.qcow -append "root=/dev/mmcblk0p2 rw rootfstype=ext4" -net nic -net user,hostfwd=tcp::2222-:22 -smp cpus=2,maxcpus=2
 </div>
 The emulator should boot the raspbian image, remember that the user is <i>pi</i> and the password <i>raspberry</i> by default.<br>
 You can enable the ssh service with <span class="cmd">systemctl enable ssh</span> or using the <span class="cmd">raspi-config</span> commands.<br>
