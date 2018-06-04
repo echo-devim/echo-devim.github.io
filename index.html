@@ -157,6 +157,22 @@ Enlarge the filesystem. Once again connected, your partition is not increasing !
 need to run <span class="cmd">$ resize2fs /dev/sda2</span>. You can check the result running <span class="cmd">$ df -h</span> before and after <span class="cmd">resize2fs</span>.
 </li>
 </ol>
+  </div>
+  </div>
+  <div class="article">#4
+    <a class="title" href="#" onclick="toggle('4')">
+      Find kernel start address on Android
+    </a>
+    <p class="age">
+      05/06/2018
+    </p>
+    <div id="4" class="abody">
+      In order to find the kernel start address of an Android (64-bit) device, first of all you need to extract and decompress the kernel from the boot.img. At this point you can run the following command:<br>
+      <div class="cmd">
+      for addr in $(xxd -p kernel | tr "\n" " " | sed "s/ //g" | sed "s/c0ffffff/c0ffffff\n/g" | grep -o '.\{16\}$'); do echo ${addr:14:2}${addr:12:2}${addr:10:2}${addr:8:2}${addr:6:2}${addr:4:2}${addr:2:2}${addr:0:2}; done | sort
+      </div>
+      This one-line command extracts all the hard-coded 64-bit addresses (<span class="cmd">sed "s/c0ffffff/c0ffffff\n/g" | grep -o '.\{16\}$'</span>), then convert these addresses from little-endian to
+      big-endian, sort and print them. In the first lines you will have the smaller addresses, one of them should be the start address of the kernel.
     </div>
   </div>
   <script>
