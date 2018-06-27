@@ -190,6 +190,23 @@ need to run <span class="cmd">$ resize2fs /dev/sda2</span>. You can check the re
       Then, you can look inside the decompiled binary (e.g. with objectdump) where the string's address is referenced. Note that often there isn't the "direct" address, but the base address of the rodata section is stored in a register and then the string's address is calculated adding the offset.
     </div>
   </div>
+  <div class="article">#6
+    <a class="title" href="#" onclick="toggle('6')">
+      Mirror/Send all the traffic to the clients of a wireless access point (acts like an hub)
+    </a>
+    <p class="age">
+      28/06/2018
+    </p>
+    <div id="6" class="abody">
+      Sometimes you may need to view the traffic of other clients connected to a wireless access point. In other word, you need to have a situation where every client (or maybe just you) can view the traffic of the others, like if they were directly connected through an hub. This can be achieved with iptables, because it can mirror the traffic to a specific client.<br>
+Look at this example:
+      <div class="cmd">
+# iptables -A PREROUTING -t mangle <b>-s</b> 11.12.13.0/24 -j TEE --gateway 11.12.13.14<br>
+# iptables -A PREROUTING -t mangle <b>-d</b> 11.12.13.0/24 -j TEE --gateway 11.12.13.14
+      </div>
+      In this way, all the traffic of the subnet 11.12.13.0/24 (of the wifi accesspoint) is mirrored to a specific client (i.e. 11.12.13.14). A workaround to mirror the traffic also to other clients, or all the clients of the subnet, is to repeat the previous two lines for each client you want to mirror the traffic to.
+    </div>
+  </div>
   <script>
     //if there is an id in the url, show the related article
     var url = window.location.href;
