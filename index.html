@@ -1,226 +1,247 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-  <title>Devim's blog</title>
-  <meta name="description" content="Devim's blog">
-  <meta name="author" content="echo-devim">
-  <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <style>
-  body{
-    font-family: 'Open Sans', sans-serif;
-    font-size:100%;
-    padding: 0;
-    margin: 0;
-  }
-  #header {
-    background-color: #3466b5;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-  }
-  #header span {
-    color: #FFFFFF;
-    font-size: 60px;
-  }
-  .spacer {
-    height: 20px;
-  }
-  .description {
-    margin: auto;
-    width: 80%;
-    padding: 20px;
-    border: 1px dashed #502020;
-  }
-  .article {
-    margin: auto;
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #BBBBEE;
-  }
-  .title {
-    display: inline;
-    color: #3466d5;
-    font-weight: bold;
-  }
-  
-  .title:hover {
-    color: #3416f5;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  .abody {
-    display: none;
-  }
-  .cmd {
-    color: #785420;
-    background-color: #FFF0F0;
-    border: 1px solid #CCCCCC;
-    padding: 1px;
-  }
-  .age {
-    font-weight: italic;
-    font-size: 12px;
-    display: inline;
-  }
-  </style>
-  <script>
-  function toggle(elemID) {
-    var x = document.getElementById(elemID);
-    if ((x.style.display === "none") || (x.style.display === "")) {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-  }
-  </script>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <title>Devim's blog</title>
+    <meta name="description" content="Devim's blog">
+    <meta name="author" content="echo-devim">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #header {
+            background-color: #3466b5;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+        }
+        
+        #header span {
+            color: #FFFFFF;
+            font-size: 60px;
+        }
+        
+        .spacer {
+            height: 20px;
+        }
+        
+        .description {
+            margin: auto;
+            width: 80%;
+            padding: 20px;
+            border: 1px dashed #502020;
+        }
+        
+        .article {
+            margin: auto;
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #BBBBEE;
+        }
+        
+        .title {
+            display: inline;
+            color: #3466d5;
+            font-weight: bold;
+        }
+        
+        .title:hover {
+            color: #3416f5;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .abody {
+            display: none;
+        }
+        
+        .cmd {
+            color: #785420;
+            background-color: #FFF0F0;
+            border: 1px solid #CCCCCC;
+            padding: 1px;
+        }
+        
+        .age {
+            font-weight: italic;
+            font-size: 12px;
+            display: inline;
+        }
+    </style>
+    <script>
+        function toggle(elemID) {
+            var x = document.getElementById(elemID);
+            if ((x.style.display === "none") || (x.style.display === "")) {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 
 </head>
 
 <body>
-  <div id="header">
-    <span>Devim's blog</span>
-  </div>
-  <div class="spacer"></div>
-  <div class="description">
-    This is not a real blog, but just a place where I can annotate some solutions, workarounds, tutorials, thoughts, tips and tricks. My idea is to share these information
-    that could be useful also to others. I didn't want to put any effort to create this single-page site, this is why it's so ugly and simple.<br>
-  </div>
-  <div class="spacer"></div>
-  <div class="article">#1
-    <a class="title" href="#" onclick="toggle('1')">
+    <div id="header">
+        <span>Devim's blog</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="description">
+        This is not a real blog, but just a place where I can annotate some solutions, workarounds, tutorials, thoughts, tips and tricks. My idea is to share these information that could be useful also to others. I didn't want to put any effort to create this
+        single-page site, this is why it's so ugly and simple.<br>
+    </div>
+    <div class="spacer"></div>
+    <div class="article">#1
+        <a class="title" href="#" onclick="toggle('1')">
       Resize disk in gnome boxes
     </a>
-    <p class="age">
-      10/03/2018
-    </p>
-    <div id="1" class="abody">
-      Right-click on a VM, open the properties and there you can resize the disk. However, at least Windows, will show a disk size equal to 20GB by default and even if you
-      change the disk size nothing seems to happen. You need to use the partition tool of Windows to resize the disk, in fact there will be an empty space unused.
+        <p class="age">
+            10/03/2018
+        </p>
+        <div id="1" class="abody">
+            Right-click on a VM, open the properties and there you can resize the disk. However, at least Windows, will show a disk size equal to 20GB by default and even if you change the disk size nothing seems to happen. You need to use the partition tool of Windows
+            to resize the disk, in fact there will be an empty space unused.
+        </div>
     </div>
-  </div>
-  <div class="article">#2
-    <a class="title" href="#" onclick="toggle('2')">
+    <div class="article">#2
+        <a class="title" href="#" onclick="toggle('2')">
       Share files and folders with virtual machines (e.g. gnome-boxes)
     </a>
-    <p class="age">
-      10/03/2018
-    </p>
-    <div id="2" class="abody">
-      Some virtual machines don't provide a way to share folders. In general you need to install some add-ons. An easy solution is to use a mini-ftp server. You can use
-      python on the host machine running <span class="cmd">python -m pyftpdlib -w</span> inside the folder you want to share (-w is for the writing permission). Then, you can easily access that folder from the guest
-      machine with a ftp client or directly with the file explorer.
+        <p class="age">
+            10/03/2018
+        </p>
+        <div id="2" class="abody">
+            Some virtual machines don't provide a way to share folders. In general you need to install some add-ons. An easy solution is to use a mini-ftp server. You can use python on the host machine running <span class="cmd">python -m pyftpdlib -w</span>            inside the folder you want to share (-w is for the writing permission). Then, you can easily access that folder from the guest machine with a ftp client or directly with the file explorer.
+        </div>
     </div>
-  </div>
-  <div class="article">#3
-    <a class="title" href="#" onclick="toggle('3')">
+    <div class="article">#3
+        <a class="title" href="#" onclick="toggle('3')">
       Emulate quad-core ARM Cortex-A9 Raspberry Pi2 through QEMU
     </a>
-    <p class="age">
-      24/05/2018
-    </p>
-    <div id="3" class="abody">
-      Following this tutorial you can emulate the Raspberry Pi 2 on Linux, but keep in mind that it will not be really fast.<br>
-First of all, download the official <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian image</a>. If you're not interested in the desktop environment, I suggest to download the stretch 
-lite version. Then unzip the image and convert into the qcow format:
-<div class="cmd">
-$ unzip raspbian_stretch_lite.zip raspbian_stretch_lite.img<br>
-$ qemu-img convert -f raw -O qcow2 raspbian_stretch_lite.img raspbian_stretch.qcow
-</div><br>
-Then, download the <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/kernel-qemu-4.4.1-vexpress">kernel-qemu-4.4.1-vexpress</a> and <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/vexpress-v2p-ca9.dtb">vexpress-v2p-ca9.dtb</a> clicking the links or from <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress">this repository</a>.<br>
-Put all the files in the same folder and run the following command to start the emulator with raspbian:<br>
-<div class="cmd">
-$ sudo qemu-system-arm -m 1024M -M vexpress-a9 -cpu cortex-a9 -kernel kernel-qemu-4.4.1-vexpress -no-reboot -dtb vexpress-v2p-ca15-tc1.dtb -sd ./raspbian-stretch.qcow -append "root=/dev/mmcblk0p2 rw rootfstype=ext4" -net nic -net user,hostfwd=tcp::2222-:22 -smp cpus=4,maxcpus=4
-</div>
-The emulator should boot the raspbian image, remember that the user is <i>pi</i> and the password <i>raspberry</i> by default.<br>
-You can enable the ssh service with <span class="cmd">systemctl enable ssh</span> or using the <span class="cmd">raspi-config</span> commands.<br>
-<h3>Expand the image size</h3>
-At this point we need to resize the image, because the raspberry has few memory available by default (i.e. we can't install too many applications, etc.).<br>
-<ol>
-<li>
-Expand the virtual size of the image using:
-<div class="cmd">$ qemu-img resize raspbian_stretch.qcow +10G</div>
-</li>
-<li>
-Boot raspbian and inside the emulator use fdisk to manage the partitions:
-<div class="cmd">$ fdisk /dev/sda</div>
-Display the partitions using the <span class="cmd">p</span> command. Note the beginning of the second partition block of the output (call this value INITP).
-Delete the second partition with the <span class="cmd">d</span> command then 2. If you again display the partitions it has disappeared.
-Create a new partition with <span class="cmd">n</span> then <span class="cmd">p</span> then 2. There fdisk provides a value for the starting block. This must match the value that you have identified earlier (INITP). The following value is the end block that is the largest possible to fill all the space If you display the information again you will see that your new partition has a end higher so that means that the partition is larger. Back up the information with <span class="cmd">w</span> command. Restart the machine.
-</li>
-<li>
-Enlarge the filesystem. Once again connected, your partition is not increasing ! The partition has been resized well but not the filesystem ! And this is our last step. It is very simple, you just
-need to run <span class="cmd">$ resize2fs /dev/sda2</span>. You can check the result running <span class="cmd">$ df -h</span> before and after <span class="cmd">resize2fs</span>.
-</li>
-</ol>
-  </div>
-  </div>
-  <div class="article">#4
-    <a class="title" href="#" onclick="toggle('4')">
+        <p class="age">
+            24/05/2018
+        </p>
+        <div id="3" class="abody">
+            Following this tutorial you can emulate the Raspberry Pi 2 on Linux, but keep in mind that it will not be really fast.<br> First of all, download the official <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian image</a>. If
+            you're not interested in the desktop environment, I suggest to download the stretch lite version. Then unzip the image and convert into the qcow format:
+            <div class="cmd">
+                $ unzip raspbian_stretch_lite.zip raspbian_stretch_lite.img<br> $ qemu-img convert -f raw -O qcow2 raspbian_stretch_lite.img raspbian_stretch.qcow
+            </div><br> Then, download the <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/kernel-qemu-4.4.1-vexpress">kernel-qemu-4.4.1-vexpress</a> and <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress/raw/master/vexpress-v2p-ca9.dtb">vexpress-v2p-ca9.dtb</a>            clicking the links or from <a href="https://github.com/vfdev-5/qemu-rpi2-vexpress">this repository</a>.<br> Put all the files in the same folder and run the following command to start the emulator with raspbian:<br>
+            <div class="cmd">
+                $ sudo qemu-system-arm -m 1024M -M vexpress-a9 -cpu cortex-a9 -kernel kernel-qemu-4.4.1-vexpress -no-reboot -dtb vexpress-v2p-ca15-tc1.dtb -sd ./raspbian-stretch.qcow -append "root=/dev/mmcblk0p2 rw rootfstype=ext4" -net nic -net user,hostfwd=tcp::2222-:22
+                -smp cpus=4,maxcpus=4
+            </div>
+            The emulator should boot the raspbian image, remember that the user is <i>pi</i> and the password <i>raspberry</i> by default.<br> You can enable the ssh service with <span class="cmd">systemctl enable ssh</span> or using the <span class="cmd">raspi-config</span>            commands.<br>
+            <h3>Expand the image size</h3>
+            At this point we need to resize the image, because the raspberry has few memory available by default (i.e. we can't install too many applications, etc.).<br>
+            <ol>
+                <li>
+                    Expand the virtual size of the image using:
+                    <div class="cmd">$ qemu-img resize raspbian_stretch.qcow +10G</div>
+                </li>
+                <li>
+                    Boot raspbian and inside the emulator use fdisk to manage the partitions:
+                    <div class="cmd">$ fdisk /dev/sda</div>
+                    Display the partitions using the <span class="cmd">p</span> command. Note the beginning of the second partition block of the output (call this value INITP). Delete the second partition with the <span class="cmd">d</span> command then
+                    2. If you again display the partitions it has disappeared. Create a new partition with <span class="cmd">n</span> then <span class="cmd">p</span> then 2. There fdisk provides a value for the starting block. This must match the value
+                    that you have identified earlier (INITP). The following value is the end block that is the largest possible to fill all the space If you display the information again you will see that your new partition has a end higher so that means
+                    that the partition is larger. Back up the information with <span class="cmd">w</span> command. Restart the machine.
+                </li>
+                <li>
+                    Enlarge the filesystem. Once again connected, your partition is not increasing ! The partition has been resized well but not the filesystem ! And this is our last step. It is very simple, you just need to run <span class="cmd">$ resize2fs /dev/sda2</span>.
+                    You can check the result running <span class="cmd">$ df -h</span> before and after <span class="cmd">resize2fs</span>.
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="article">#4
+        <a class="title" href="#" onclick="toggle('4')">
       Find kernel start address on Android
     </a>
-    <p class="age">
-      05/06/2018
-    </p>
-    <div id="4" class="abody">
-      In order to find the kernel start address of an Android (64-bit) device, first of all you need to extract and decompress the kernel from the boot.img. At this point you can run the following command:<br>
-      <div class="cmd">
-      for addr in $(xxd -p kernel | tr "\n" " " | sed "s/ //g" | sed "s/c0ffffff/c0ffffff\n/g" | grep -o '.\{16\}$'); do echo ${addr:14:2}${addr:12:2}${addr:10:2}${addr:8:2}${addr:6:2}${addr:4:2}${addr:2:2}${addr:0:2}; done | sort
-      </div>
-      This one-line command extracts all the hard-coded 64-bit addresses (<span class="cmd">sed "s/c0ffffff/c0ffffff\n/g" | grep -o '.\{16\}$'</span>), then convert these addresses from little-endian to
-      big-endian, sort and print them. In the first lines you will have the smaller addresses, one of them should be the start address of the kernel.
+        <p class="age">
+            05/06/2018
+        </p>
+        <div id="4" class="abody">
+            In order to find the kernel start address of an Android (64-bit) device, first of all you need to extract and decompress the kernel from the boot.img. At this point you can run the following command:<br>
+            <div class="cmd">
+                for addr in $(xxd -p kernel | tr "\n" " " | sed "s/ //g" | sed "s/c0ffffff/c0ffffff\n/g" | grep -o '.\{16\}$'); do echo ${addr:14:2}${addr:12:2}${addr:10:2}${addr:8:2}${addr:6:2}${addr:4:2}${addr:2:2}${addr:0:2}; done | sort
+            </div>
+            This one-line command extracts all the hard-coded 64-bit addresses (<span class="cmd">sed "s/c0ffffff/c0ffffff\n/g" | grep -o '.\{16\}$'</span>), then convert these addresses from little-endian to big-endian, sort and print them. In the first
+            lines you will have the smaller addresses, one of them should be the start address of the kernel.
+        </div>
     </div>
-  </div>
-  <div class="article">#5
-    <a class="title" href="#" onclick="toggle('5')">
+    <div class="article">#5
+        <a class="title" href="#" onclick="toggle('5')">
       Find string cross-references in binary image
     </a>
-    <p class="age">
-      14/06/2018
-    </p>
-    <div id="5" class="abody">
-      Sometimes there is the need to find the cross-references to a string in a binary. First of all, we need to know what is the address of the string. This is possible running the following command:<br>
-      <div class="cmd">
-      $ offset=$(strings --radix=x binary | awk '/Your string/{print "0x"$1}'); printf "0x%x\n" $(($offset + $START_ADDRESS))
-      </div>
-      Then, you can look inside the decompiled binary (e.g. with objectdump) where the string's address is referenced. Note that often there isn't the "direct" address, but the base address of the rodata section is stored in a register and then the string's address is calculated adding the offset.
+        <p class="age">
+            14/06/2018
+        </p>
+        <div id="5" class="abody">
+            Sometimes there is the need to find the cross-references to a string in a binary. First of all, we need to know what is the address of the string. This is possible running the following command:<br>
+            <div class="cmd">
+                $ offset=$(strings --radix=x binary | awk '/Your string/{print "0x"$1}'); printf "0x%x\n" $(($offset + $START_ADDRESS))
+            </div>
+            Then, you can look inside the decompiled binary (e.g. with objectdump) where the string's address is referenced. Note that often there isn't the "direct" address, but the base address of the rodata section is stored in a register and then the string's
+            address is calculated adding the offset.
+        </div>
     </div>
-  </div>
-  <div class="article">#6
-    <a class="title" href="#" onclick="toggle('6')">
+    <div class="article">#6
+        <a class="title" href="#" onclick="toggle('6')">
       Mirror/Send all the traffic to the clients of a wireless access point (acts like an hub)
     </a>
-    <p class="age">
-      28/06/2018
-    </p>
-    <div id="6" class="abody">
-      Sometimes you may need to view the traffic of other clients connected to a wireless access point. In other word, you need to have a situation where every client (or maybe just you) can view the traffic of the others, like if they were directly connected through an hub. This can be achieved with iptables, because it can mirror the traffic to a specific client.<br>
-Look at this example:
-      <div class="cmd">
-# iptables -A PREROUTING -t mangle <b>-s</b> 11.12.13.0/24 -j TEE --gateway 11.12.13.14<br>
-# iptables -A PREROUTING -t mangle <b>-d</b> 11.12.13.0/24 -j TEE --gateway 11.12.13.14
-      </div>
-      In this way, all the traffic of the subnet 11.12.13.0/24 (of the wifi accesspoint) is mirrored to a specific client (i.e. 11.12.13.14). A workaround to mirror the traffic also to other clients, or all the clients of the subnet, is to repeat the previous two lines for each client you want to mirror the traffic to.
+        <p class="age">
+            28/06/2018
+        </p>
+        <div id="6" class="abody">
+            Sometimes you may need to view the traffic of other clients connected to a wireless access point. In other word, you need to have a situation where every client (or maybe just you) can view the traffic of the others, like if they were directly connected
+            through an hub. This can be achieved with iptables, because it can mirror the traffic to a specific client.<br> Look at this example:
+            <div class="cmd">
+                # iptables -A PREROUTING -t mangle <b>-s</b> 11.12.13.0/24 -j TEE --gateway 11.12.13.14<br> # iptables -A PREROUTING -t mangle <b>-d</b> 11.12.13.0/24 -j TEE --gateway 11.12.13.14
+            </div>
+            In this way, all the traffic of the subnet 11.12.13.0/24 (of the wifi accesspoint) is mirrored to a specific client (i.e. 11.12.13.14). A workaround to mirror the traffic also to other clients, or all the clients of the subnet, is to repeat the previous
+            two lines for each client you want to mirror the traffic to.
+        </div>
     </div>
-  </div>
-  <script>
-    //if there is an id in the url, show the related article
-    var url = window.location.href;
-    var res = url.split("_")[0].split("#");
-    if (res.length == 2) { //there is an id
-      toggle(res[1]);
-    }
-    //process all the hrefs
-    //this is an experimental trick to have links pointing to the articles containing their titles
-    //in order to be better indexed by google.
-    var anchors = document.getElementsByClassName('title');
-    for(var i = 0; i < anchors.length; i++){
-      anchors[i].href = '#' + (i+1) + '_' + encodeURI(anchors[i].innerText);
-    }
-  </script>
+    <div class="article">#7
+        <a class="title" href="#" onclick="toggle('7')">
+      Port scanner with netcat and bash
+    </a>
+        <p class="age">
+            28/05/2020
+        </p>
+        <div id="2" class="abody">
+            This is a simple bash function that implements a TCP port scanner based on netcat. I wrote it because I was connected to a machine without nmap installed on it and without enough privileges to install it.
+            <div class="cmd">
+                $ scan() { for port in $(seq 1 65535); do (nc -vz -w 1 $1 $port 2>&1| grep succeeded &); done } $ scan 127.0.0.1
+            </div>
+        </div>
+    </div>
+    <script>
+        //if there is an id in the url, show the related article
+        var url = window.location.href;
+        var res = url.split("_")[0].split("#");
+        if (res.length == 2) { //there is an id
+            toggle(res[1]);
+        }
+        //process all the hrefs
+        //this is an experimental trick to have links pointing to the articles containing their titles
+        //in order to be better indexed by google.
+        var anchors = document.getElementsByClassName('title');
+        for (var i = 0; i < anchors.length; i++) {
+            anchors[i].href = '#' + (i + 1) + '_' + encodeURI(anchors[i].innerText);
+        }
+    </script>
 </body>
+
 </html>
