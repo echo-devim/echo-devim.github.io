@@ -223,7 +223,8 @@
         <div id="7" class="abody">
             This is a simple bash function that implements a TCP port scanner based on netcat. I wrote it because I was connected to a machine without nmap installed on it and without enough privileges to install it.
             <div class="cmd">
-                $ scan() { for port in $(seq 1 65535); do (nc -vz -w 1 $1 $port 2>&1| grep succeeded &); done } $ scan 127.0.0.1
+                $ scan() { for port in $(seq 1 65535); do (nc -vz -w 1 $1 $port 2>&1| grep succeeded &); done }
+                <br>$ scan 127.0.0.1
             </div>
         </div>
     </div>
