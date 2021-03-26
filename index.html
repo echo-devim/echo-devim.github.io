@@ -228,6 +228,21 @@
             </div>
         </div>
     </div>
+    <div class="article">#8
+        <a class="title" href="#" onclick="toggle('8')">
+      List processes in a Windows memory dump only with ripgrep (yes, without volatility)
+    </a>
+        <p class="age">
+            26/03/2021
+        </p>
+        <div id="8" class="abody">
+            Volatility is a great tool for memory forensics. However, you can just grep the process list with one line! In this way you don't need to know the memory layout. I'm using ripgrep, but you can use also a normal grep with perl regular expression support.
+            All the processes information are strings (including the pid) and the keyword to look for is 'Win32_Process'.
+            <div class="cmd">
+                $ rg -abo "Win32_Process.{9}Win32_Process.*\x00\x00\x00\x00" memorydump_test.raw | sed "s/\x00\x00*$//g" | sed "s/\x00\x00\x57/\tW/g" | sed "s/\x00\x00/=/g"
+            </div>
+        </div>
+    </div>
     <script>
         //if there is an id in the url, show the related article
         var url = window.location.href;
